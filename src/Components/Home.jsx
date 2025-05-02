@@ -117,7 +117,7 @@ function Home() {
     >
       <div className="flex justify-center items-center mt-[0.5rem] xl:mt-[3.5rem] relative p-5">
         <div
-          className="box md:mt-0 mt-3 md:hover:h-[42rem] md:h-[42rem] md:w-[91rem] md:hover:w-[92rem] h-full w-full bg-transparent shadow-2xl bg-opacity-50 backdrop-blur-md rounded-3xl flex flex-col justify-between items-center px-4 py-0 sm:py-2 transition-all duration-300 ease-in-out"
+          className="box md:mt-0 mt-3 md:hover:h-[42rem] md:h-[42rem] lg:h-[50rem] md:w-[91rem] md:hover:w-[92rem] h-full w-full bg-transparent shadow-2xl bg-opacity-50 backdrop-blur-md rounded-3xl flex flex-col justify-between items-center px-4 py-0 sm:py-2 transition-all duration-300 ease-in-out"
           style={{
             boxShadow: "0 0px 30px rgba(114, 212, 186, 0.31)",
             backgroundColor: "rgba(255, 255, 255, 0.1)",
@@ -306,7 +306,7 @@ function Home() {
             className=" md:hidden bg-gradient-to-br from-blue-500 via-purple-400 to-pink-600 text-white font-semibold py-[1px] px-6 rounded-lg
               hover:from-blue-600 hover:via-purple-500 hover:to-pink-700 text-[8px]
               transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl 
-              focus:outline-none focus:ring-4 focus:ring-blue-300 mb-2" 
+              focus:outline-none focus:ring-4 focus:ring-blue-300 mb-4" 
           >
             About more
           </button>
