@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ai from "../assets/images/certificate/ai.png";
 import edu from "../assets/images/certificate/edu.png";
 import iit from "../assets/images/certificate/IIT.png";
@@ -7,43 +7,147 @@ import introoopsjv from "../assets/images/certificate/introoopsjv.png";
 import oopsjv from "../assets/images/certificate/oopsjv.png";
 import mysql from "../assets/images/certificate/mysql.png";
 import react from "../assets/images/certificate/React.png";
+import { div } from "framer-motion/client";
 
 function Certifications() {
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const allCertificates = [ai, mysql, react, oopsjv, introjv, introoopsjv, edu];
+
   return (
-    <div className="w-full min-h-screen bg-gradient-to-b from-transparent via-black/20 to-transparent p-8">
-      {/* IIT Certificate - Larger and Centered */}
-      <div className="flex justify-center mb-10">
-        <div className="relative group rounded-lg overflow-hidden shadow-lg transition-all duration-500 border border-transparent hover:border-cyan-400 hover:scale-105">
-          <img
-            src={iit}
-            alt="IIT Certificate"
-            className="w-[530px] h-[350px] object-cover rounded-lg group-hover:brightness-110"
-          />
-          <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-cyan-400 group-hover:w-full transition-all duration-500 rounded-full"></span>
+    <div>
+      <div className="sm:hidden block w-full min-h-screen bg-gradient-to-b from-transparent via-black/20 to-transparent p-4 sm:p-8">
+        {/* IIT Certificate */}
+        <div className="flex justify-center mb-6">
+          <div
+            className="relative group rounded-lg overflow-hidden shadow-lg transition-all duration-500 border border-transparent hover:border-cyan-400 hover:scale-105 cursor-pointer w-full max-w-[600px]"
+            onClick={() => setSelectedImage(iit)}
+          >
+            <img
+              src={iit}
+              alt="IIT Certificate"
+              className="w-full h-auto object-contain rounded-lg group-hover:brightness-110"
+            />
+            <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-cyan-400 group-hover:w-full transition-all duration-500 rounded-full"></span>
+          </div>
         </div>
+
+        {/* Small screen scrollable box */}
+        <div className="block sm:hidden relative h-[550px] overflow-hidden mb-6">
+          {/* Shadows */}
+          <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-[#80080800] to-transparent z-10 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#fff0] to-transparent z-10 pointer-events-none" />
+
+          {/* Scrollable Certificates */}
+          <div
+            className="h-full overflow-y-auto space-y-6 px-4 py-4 hide-scrollbar"
+            style={{
+              scrollPaddingTop: "100px",
+              scrollPaddingBottom: "100px",
+              perspective: "1000px",
+            }}
+          >
+            {allCertificates.map((src, index) => (
+              <div
+                key={index}
+                onClick={() => setSelectedImage(src)}
+                className="transform-gpu transition-transform duration-300 ease-in-out scale-95 hover:scale-100"
+                style={{ transformOrigin: "center" }}
+              >
+                <div className="w-full max-w-[20rem] mx-auto bg-[#1e293b]/80 rounded-xl shadow-lg p-3 text-white flex flex-col gap-2 border border-white/10">
+                  <img
+                    src={src}
+                    alt={`Certificate ${index + 1}`}
+                    className="w-full h-[9rem] object-contain rounded-md"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Modal View */}
+        {selectedImage && (
+          <div
+            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+            onClick={() => setSelectedImage(null)}
+          >
+            <div className="relative max-w-full max-h-full p-4">
+              <img
+                src={selectedImage}
+                alt="Enlarged Certificate"
+                className="max-w-[95vw] max-h-[90vh] object-contain rounded-lg shadow-xl scale-105"
+              />
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute top-2 right-2 text-white bg-black/60 hover:bg-black/80 rounded-full p-2"
+              >
+                ✕
+              </button>
+            </div>
+          </div>
+        )}
       </div>
 
-      {/* Heading */}
-      <h2 className="text-3xl font-bold text-white text-center mb-6 underline underline-offset-8 decoration-cyan-400">
-        Other Certifications
-      </h2>
+      <div className="hidden sm:block w-full min-h-screen bg-gradient-to-b from-transparent via-[#65555500] to-transparent p-4 sm:p-8 text-white">
+        {/* IIT Certificate - Large on Top */}
+        <div className="hidden sm:flex justify-center mb-10">
+          <div
+            className="relative group rounded-lg overflow-hidden shadow-lg transition-all duration-500 border border-transparent hover:border-cyan-400 hover:scale-105 cursor-pointer w-full max-w-[600px]"
+            onClick={() => setSelectedImage(iit)}
+          >
+            <img
+              src={iit}
+              alt="IIT Certificate"
+              className="w-full h-auto object-contain rounded-lg group-hover:brightness-110"
+            />
+            <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-cyan-400 group-hover:w-full transition-all duration-500 rounded-full"></span>
+          </div>
+        </div>
 
-      {/* Certificate Grid */}
-      <div className="flex flex-wrap justify-center gap-8">
-        {[ai, mysql, react, edu, introjv, introoopsjv, oopsjv].map(
-          (src, idx) => (
+        {/* Heading */}
+        <h2 className="text-3xl font-bold text-center mb-6 underline underline-offset-8 decoration-cyan-400">
+          Other Certifications
+        </h2>
+
+        {/* Certificate Grid */}
+        <div className="hidden sm:flex flex-wrap justify-center gap-6 sm:gap-7">
+          {allCertificates.map((src, idx) => (
             <div
               key={idx}
-              className="relative group rounded-lg overflow-hidden shadow-md transition-all duration-500 border border-transparent hover:border-cyan-400 hover:scale-105"
+              onClick={() => setSelectedImage(src)}
+              className="relative group rounded-lg overflow-hidden shadow-md transition-all duration-500 border border-transparent hover:border-cyan-400 hover:scale-105 cursor-pointer w-[90vw] sm:w-[14rem] md:w-[15rem] lg:w-[17rem]"
             >
               <img
                 src={src}
                 alt={`Certificate ${idx + 1}`}
-                className="w-[320px] h-[220px] object-cover rounded-lg group-hover:brightness-110"
+                className="w-full h-auto object-contain rounded-lg group-hover:brightness-110"
               />
-              <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-cyan-400 group-hover:w-full transition-all duration-500 rounded-full"></span>
+              <span className="absolute bottom-0 left-0 h-[1px] sm:h-[2px] w-0 bg-cyan-400 group-hover:w-full transition-all duration-500 rounded-full"></span>
             </div>
-          )
+          ))}
+        </div>
+
+        {/* Modal for All Certificates (including IIT) */}
+        {selectedImage && (
+          <div
+            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+            onClick={() => setSelectedImage(null)}
+          >
+            <div className="relative w-full max-w-[50vw] max-h-[40vh]">
+              <img
+                src={selectedImage}
+                alt="Enlarged Certificate"
+                className="w-full h-full object-contain rounded-lg shadow-xl"
+              />
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute top-2 right-2 text-white bg-black/60 hover:bg-black/80 rounded-full p-2"
+              >
+                ✕
+              </button>
+            </div>
+          </div>
         )}
       </div>
     </div>

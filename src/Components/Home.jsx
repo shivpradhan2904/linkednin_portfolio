@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import image2 from "../assets/images/image3.avif"; // Replace with actual image path
 import image from "../assets/images/img.jpg"; // Replace with actual image path
 import image1 from "../assets/images/splash1.png"; // Replace with actual image path
-// import resume from "/public/SibaPradhan.pdf"; // Replace with actual image path
+import resume from "../assets/images/image.png"; // Replace with actual image path
+
 import {
   FaLinkedinIn,
   FaGithub,
@@ -67,18 +68,17 @@ function Home() {
 
   const handleDownload = () => {
     setDownloading(true);
-
-    const link = document.createElement("a");
-    link.href = "/SibaPradhan.pdf"; // Correct public path
-    link.download = "SibaPradhan_Resume.pdf"; // Optional rename
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-
     setTimeout(() => {
+      const link = document.createElement("a");
+      link.href = resume;
+      link.download = "Siba_Resume.png";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
       setDownloading(false);
-    }, 2000);
+    }, 2000); // fake loading effect
   };
+  
 
   const handleToggle = () => {
     setShowInfo((prev) => !prev);
@@ -222,7 +222,8 @@ function Home() {
                   className="text-[#fff] md:text-lg text-[10px] px-4 max-w-2xl"
                   style={{
                     color: "white",
-                    textShadow: "0 0 3px #ffffff, 0 0 10px #ffffffb3, 0 0 20px #ffffff"                   
+                    textShadow:
+                      "0 0 3px #ffffff, 0 0 10px #ffffffb3, 0 0 20px #ffffff",
                   }}
                 >
                   <span
@@ -238,7 +239,9 @@ function Home() {
                     learning new technologies 🚀, solving real-world problems
                     🧠, and turning ideas into reality through code 🎯.
                     <div className="border-b border-cyan-300 my-2"></div>
-                    <span className="">Let's connect and create something awesome together! 🌟</span>
+                    <span className="">
+                      Let's connect and create something awesome together! 🌟
+                    </span>
                   </span>
                 </p>
               </div>
@@ -306,7 +309,7 @@ function Home() {
             className=" md:hidden bg-gradient-to-br from-blue-500 via-purple-400 to-pink-600 text-white font-semibold py-[1px] px-6 rounded-lg
               hover:from-blue-600 hover:via-purple-500 hover:to-pink-700 text-[8px]
               transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl 
-              focus:outline-none focus:ring-4 focus:ring-blue-300 mb-4" 
+              focus:outline-none focus:ring-4 focus:ring-blue-300 mb-4"
           >
             About more
           </button>
@@ -336,7 +339,7 @@ function Home() {
             style={{
               background: "linear-gradient(135deg, #2c3e50, #4ca1af, #2c3e50)",
               color: "white",
-              textShadow: "0 0 10px #fff, 0 0 20px #4ca1af, 0 0 30px #2c3e50",
+              // textShadow: "0 0 10px #fff, 0 0 20px #4ca1af, 0 0 30px #2c3e50",
             }}
           >
             {/* About Me Section */}
@@ -376,7 +379,14 @@ function Home() {
               className="text-center text-sm mt-4 sm:mt-6 sm:text-lg italic font-bold text-800"
               style={{ fontFamily: "'Playwrite Australia SA', cursive" }}
             >
-              <p>"A day without laughter is a day wasted." — Charlie Chaplin</p>
+              <p
+                style={{
+                  color: "white",
+                  textShadow: "0 0 10px #fff, 0 0 20px #4ca1af, 0 0 30px #2c3e50",
+                }}
+              >
+                "A day without laughter is a day wasted." — Charlie Chaplin
+              </p>
             </footer>
           </div>
         </div>

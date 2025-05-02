@@ -33,7 +33,7 @@ function Portfolio() {
 
   return (
     <div
-      className="w-full min-h-screen flex flex-col justify-center items-center text-white overflow-x-hidden p-2 "
+      className="w-full h-full flex flex-col justify-center items-center text-white overflow-x-hidden p-2 "
       style={{
         backgroundImage: `url(${image2})`,
         backgroundSize: "cover",
@@ -50,7 +50,7 @@ function Portfolio() {
         }}
       >
         <div
-          className="relative flex justify-center w-full h-[5rem] p-2 mt-[4rem]"
+          className="relative flex justify-center w-full gap-2  h-[3rem] sm:h-[4rem] p-2 mt-[4rem]"
           ref={containerRef}
         >
           {boxes.map((box, index) => (
@@ -70,11 +70,11 @@ function Portfolio() {
               <img
                 src={box.img}
                 alt={box.label}
-                className={`w-6 h-6 mb-1 transition-all duration-200 invert
+                className={`sm:w-6 sm:h-6 h-4 w-4 mb-1 transition-all duration-200 invert
               group-hover:drop-shadow-[0_0_5px_white]
               ${selectedBox === box.id ? "drop-shadow-[0_0_5px_white]" : ""}`}
               />
-              <span className="font-bold text-white">{box.label}</span>
+              <span className="font-bold text-[10px] sm:text-lg text-white">{box.label}</span>
             </div>
           ))}
 
