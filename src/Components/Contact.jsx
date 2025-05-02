@@ -13,7 +13,7 @@ import image2 from "../assets/images/image3.avif"; // Replace with your image
 function Contact() {
   return (
     <div
-      className="min-h-screen w-full flex flex-col text-white p-2 shadow-4xl shadow-white"
+      className="h-screen w-full flex flex-col text-white p-2 shadow-4xl shadow-white"
       style={{
         backgroundImage: `url(${image2})`,
         backgroundSize: "cover",
@@ -73,7 +73,7 @@ function Contact() {
           </div>
 
           {/* Social Links */}
-          <div className="flex flex-col mt-15 sm:mt-0 items-center">
+          <div className="flex flex-col mt-15 sm:mt-13 items-center">
             <h3
               className="text-lg sm:text-2xl font-bold mb-3"
               style={{
