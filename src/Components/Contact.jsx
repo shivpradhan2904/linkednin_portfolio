@@ -13,7 +13,7 @@ import image2 from "../assets/images/image3.avif"; // Replace with your image
 function Contact() {
   return (
     <div
-      className="h-screen w-full flex flex-col text-white p-2 shadow-4xl shadow-white"
+      className="h-full w-full flex flex-col text-white p-2 shadow-4xl shadow-white"
       style={{
         backgroundImage: `url(${image2})`,
         backgroundSize: "cover",
