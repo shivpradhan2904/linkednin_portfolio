@@ -115,7 +115,7 @@ function Home() {
         backgroundPosition: "center",
       }}
     >
-      <div className="flex justify-center items-center mt-[2.2rem] xl:mt-[3.5rem] relative p-5">
+      <div className="flex justify-center items-center mt-[0.5rem] xl:mt-[3.5rem] relative p-5">
         <div
           className="box md:mt-0 mt-3 md:hover:h-[45rem] md:h-[45rem] md:w-[91rem] md:hover:w-[92rem] h-full w-full bg-transparent shadow-2xl bg-opacity-50 backdrop-blur-md rounded-3xl flex flex-col justify-between items-center px-4 py-0 sm:py-2 transition-all duration-300 ease-in-out"
           style={{
@@ -240,13 +240,13 @@ function Home() {
                     learning new technologies 🚀, solving real-world problems
                     🧠, and turning ideas into reality through code 🎯.
                     <div className="border-b border-cyan-300 my-2"></div>
-                    Let's connect and create something awesome together! 🌟
+                    <span className="">Let's connect and create something awesome together! 🌟</span>
                   </span>
                 </p>
               </div>
 
               {/* Social Icons */}
-              <div className="flex gap-3 sm:gap-4 md:gap-6 mt-4 md:mt-2 sm:mt-8 lg:mt-9">
+              <div className="flex gap-3 sm:gap-4 md:gap-6 mb-5 mt-2 md:mt-2 sm:mt-8 lg:mt-9">
                 <a
                   href="https://www.linkedin.com/in/siba-pradhan-2606a9289"
                   className="border border-cyan-400 p-2 sm:p-3 lg:p-4 rounded-full text-cyan-400 text-lg sm:text-xl md:text-2xl lg:text-3xl hover:scale-110 hover:rotate-6 hover:shadow-[0_0_20px_4px_rgba(34,211,238,0.8)] transition-all duration-300 ease-in-out"
