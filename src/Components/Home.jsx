@@ -117,7 +117,7 @@ function Home() {
     >
       <div className="flex justify-center items-center mt-[0.5rem] xl:mt-[3.5rem] relative p-5">
         <div
-          className="box md:mt-0 mt-3 md:hover:h-[45rem] md:h-[45rem] md:w-[91rem] md:hover:w-[92rem] h-full w-full bg-transparent shadow-2xl bg-opacity-50 backdrop-blur-md rounded-3xl flex flex-col justify-between items-center px-4 py-0 sm:py-2 transition-all duration-300 ease-in-out"
+          className="box md:mt-0 mt-3 md:hover:h-[42rem] md:h-[42rem] md:w-[91rem] md:hover:w-[92rem] h-full w-full bg-transparent shadow-2xl bg-opacity-50 backdrop-blur-md rounded-3xl flex flex-col justify-between items-center px-4 py-0 sm:py-2 transition-all duration-300 ease-in-out"
           style={{
             boxShadow: "0 0px 30px rgba(114, 212, 186, 0.31)",
             backgroundColor: "rgba(255, 255, 255, 0.1)",
@@ -219,12 +219,10 @@ function Home() {
               {/* About Me Paragraph */}
               <div className="text-center sm:mt-4 md:mt-1">
                 <p
-                  className="text-white md:text-lg text-[10px] px-4 max-w-2xl"
+                  className="text-[#fff] md:text-lg text-[10px] px-4 max-w-2xl"
                   style={{
                     color: "white",
-                    textShadow:
-                      "0 0 10px #fff, ",
-                    animation: "glow infinite alternate",
+                    textShadow: "0 0 3px #ffffff, 0 0 10px #ffffffb3, 0 0 20px #ffffff"                   
                   }}
                 >
                   <span
@@ -308,7 +306,7 @@ function Home() {
             className=" md:hidden bg-gradient-to-br from-blue-500 via-purple-400 to-pink-600 text-white font-semibold py-[1px] px-6 rounded-lg
               hover:from-blue-600 hover:via-purple-500 hover:to-pink-700 text-[8px]
               transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl 
-              focus:outline-none focus:ring-4 focus:ring-blue-300"
+              focus:outline-none focus:ring-4 focus:ring-blue-300 mb-2" 
           >
             About more
           </button>
@@ -339,7 +337,6 @@ function Home() {
               background: "linear-gradient(135deg, #2c3e50, #4ca1af, #2c3e50)",
               color: "white",
               textShadow: "0 0 10px #fff, 0 0 20px #4ca1af, 0 0 30px #2c3e50",
-              animation: "glow 1.5s infinite alternate",
             }}
           >
             {/* About Me Section */}

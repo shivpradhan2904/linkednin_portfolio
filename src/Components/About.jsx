@@ -172,8 +172,16 @@ function Circle({ circleTitle, circleImage, duration }) {
         damping: 12,
         duration: 0.8,
       }}
-      className="relative min-h-[200px] min-w-[200px] sm:w-[34vh] sm:h-[33vh] rounded-full overflow-hidden flex justify-center items-center hover:scale-110 transition-transform duration-500 ease-in-out"
-    >
+      className="relative 
+      w-[200px] h-[200px]              // base (mobile)
+      sm:w-[34vh] sm:h-[19vh]         // small screens (≥640px)
+      md:w-[35vh] md:h-[22vh]        // medium screens (≥768px)
+      lg:w-[34vh] lg:h-[27vh]      // large screens (≥1024px)
+      xl:w-[34vh] xl:h-[34vh]    // extra large screens (≥1280px)
+      rounded-full overflow-hidden 
+      flex justify-center items-center 
+      hover:scale-110 transition-transform duration-500 ease-in-out"
+        >
       <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-900 to-cyan-300 hover:from-purple-600 hover:to-pink-500 transition-all duration-500"></div>
       <div className="relative z-10 flex flex-col justify-center items-center text-white">
         <img
@@ -192,10 +200,6 @@ function Circle({ circleTitle, circleImage, duration }) {
     </motion.div>
   );
 }
-
-
-
-
 
 // TextBox Component
 function TextBox({ title, institution, location, duration }) {

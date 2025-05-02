@@ -33,7 +33,7 @@ function Contact() {
         <div className="flex-1 w-full overflow-y-auto px-2 sm:px-4 sm:py-3 space-y-3 mt-5">
           {/* Contact Form Section */}
           <div className="flex flex-col md:flex-row gap-5 justify-center mt-12 sm:mt-5">
-            <div className="w-full md:w-[50%] bg-transparent p-2 sm:p-6 rounded-xl shadow-md mx-auto">
+            <div className="w-full md:w-[50%] bg-transparent p-2 sm:p-6 rounded-xl shadow-md mx-auto ">
               <div className="w-full space-y-5">
                 <h3 className="sm:text-2xl text-lg font-bold text-cyan-400 text-center transition-all duration-300">
                   Get in Touch
@@ -73,7 +73,7 @@ function Contact() {
           </div>
 
           {/* Social Links */}
-          <div className="flex flex-col mt-10 sm:mt-20 items-center">
+          <div className="flex flex-col mt-5 sm:mt-10 items-center">
             <h3
               className="text-lg sm:text-2xl font-bold mb-3"
               style={{
