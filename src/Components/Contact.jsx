@@ -73,7 +73,7 @@ function Contact() {
           </div>
 
           {/* Social Links */}
-          <div className="flex flex-col mt-15 sm:mt-13 items-center">
+          <div className="flex flex-col mt-15 sm:mt-20 items-center">
             <h3
               className="text-lg sm:text-2xl font-bold mb-3"
               style={{
