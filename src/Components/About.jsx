@@ -105,7 +105,7 @@ function Section({
 }) {
   return (
     <div className="flex flex-col gap-6 items-center w-full">
-      {/* Mobile Layout: Circle */}
+      {/* Mobile Layout */}
       <div className="flex flex-col sm:hidden items-center gap-6 w-full">
         <Circle
           circleTitle={circleTitle}
@@ -121,7 +121,7 @@ function Section({
         <div className="h-1 w-40 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-full mt-4"></div>
       </div>
 
-      {/* Desktop Layout: Side-by-Side */}
+      {/* Desktop Layout */}
       <div className="hidden sm:flex sm:flex-row sm:items-center sm:justify-center sm:gap-10 w-full">
         {reverse ? (
           <>
@@ -157,20 +157,28 @@ function Section({
   );
 }
 
+
 // Circle Component
+
 function Circle({ circleTitle, circleImage, duration }) {
   return (
     <motion.div
-      initial={{ scale: 0 }}
-      whileInView={{ scale: 1 }}
-      transition={{ duration: 1, ease: "easeOut" }}
-      className="relative h-[25vh] w-[25vh] sm:w-[34vh] sm:h-[33vh] rounded-full overflow-hidden flex justify-center items-center hover:scale-110 transition-transform duration-500 ease-in-out"
+      initial={{ opacity: 0, y: 50, scale: 0.8 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.4 }}
+      transition={{
+        type: "spring",
+        stiffness: 60,
+        damping: 12,
+        duration: 0.8,
+      }}
+      className="relative min-h-[200px] min-w-[200px] sm:w-[34vh] sm:h-[33vh] rounded-full overflow-hidden flex justify-center items-center hover:scale-110 transition-transform duration-500 ease-in-out"
     >
       <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-900 to-cyan-300 hover:from-purple-600 hover:to-pink-500 transition-all duration-500"></div>
       <div className="relative z-10 flex flex-col justify-center items-center text-white">
         <img
           src={circleImage}
-          alt=""
+          alt="Icon"
           className="sm:h-[45px] sm:w-[45px] w-[40px] h-[40px] invert mb-5"
         />
         <div
@@ -184,6 +192,10 @@ function Circle({ circleTitle, circleImage, duration }) {
     </motion.div>
   );
 }
+
+
+
+
 
 // TextBox Component
 function TextBox({ title, institution, location, duration }) {

@@ -184,7 +184,7 @@ function Home() {
                   onClick={handleDownload}
                   style={{ fontFamily: '"Winky Rough", cursive' }}
                   className="mt-4 bg-gradient-to-r border-2 text-sm cursor-pointer border-[#2e9088] from-cyan-300 via-purple-400 to-blue-600 text-white font-semibold py-1 w-30 rounded-lg 
-      transition-all duration-300 ease-in-out transform hover:bg-gradient-to-l hover:scale-105 hover:shadow-lg shiny-text"
+      transition-all duration-300 ease-in-out transform hover:bg-gradient-to-l hover:scale-105 hover:shadow-lg "
                   disabled={downloading}
                 >
                   {downloading ? (
@@ -223,8 +223,8 @@ function Home() {
                   style={{
                     color: "white",
                     textShadow:
-                      "0 0 10px #fff, 0 0 20px #4ca1af, 0 0 30px #2c3e50",
-                    animation: "glow 1.5s infinite alternate",
+                      "0 0 10px #fff, ",
+                    animation: "glow infinite alternate",
                   }}
                 >
                   <span

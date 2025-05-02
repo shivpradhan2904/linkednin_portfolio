@@ -60,7 +60,7 @@ function Navbar() {
       </div>
 
       <div
-        className="group box jumping h-[1rem] w-[3rem] sm:h-[1.5rem] sm:w-[5rem] md:h-[2rem] md:w-[7rem] bg-[#ffffff] rounded-3xl px-0.5 flex justify-center items-center cursor-pointer shadow-md hover:shadow-lg transition-transform duration-300 hover:bg-black hover:scale-110"
+        className="group box jumping hidden sm:flex h-[1rem] w-[3rem] sm:h-[1.5rem] sm:w-[5rem] md:h-[2rem] md:w-[7rem] bg-[#ffffff] rounded-3xl px-0.5  justify-center items-center cursor-pointer shadow-md hover:shadow-lg transition-transform duration-300 hover:bg-black hover:scale-110"
         style={{ fontFamily: "'Poppins', sans-serif" }} // Apply Poppins for the button
       >
         <span className="font-semibold sm:text-[10px] text-[7px] md:text-[13px] pt-0.5 sm:pt-0 text-black transition-colors duration-300 group-hover:text-white">

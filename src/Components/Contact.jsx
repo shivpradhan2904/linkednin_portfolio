@@ -23,7 +23,7 @@ function Contact() {
       }}
     >
       <div
-        className="flex flex-col justify-between items-center w-full min-h-screen mx-auto rounded-3xl shadow-2xl flex-1 overflow-hidden backdrop-blur-md transition-all duration-300 ease-in-out"
+        className="flex flex-col justify-between items-center w-full h-full mx-auto rounded-3xl shadow-2xl flex-1 overflow-hidden backdrop-blur-md transition-all duration-300 ease-in-out"
         style={{
           backgroundColor: "rgba(255, 255, 255, 0.1)",
           boxShadow: "0 0px 30px rgba(97, 151, 141, 0.56)",
@@ -73,7 +73,7 @@ function Contact() {
           </div>
 
           {/* Social Links */}
-          <div className="flex flex-col mt-15 sm:mt-20 items-center">
+          <div className="flex flex-col mt-10 sm:mt-20 items-center">
             <h3
               className="text-lg sm:text-2xl font-bold mb-3"
               style={{
@@ -84,7 +84,7 @@ function Contact() {
               Connect with Me
             </h3>
 
-            <div className="flex flex-wrap justify-center gap-3 sm:gap-8 w-full max-w-2xl">
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-8 w-full max-w-2xl mb-4">
               {[
                 {
                   icon: <FaLinkedin />,
