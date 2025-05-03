@@ -103,15 +103,15 @@ function MyTech() {
             />
           </div>
           <span
-            className="text-white text-base font-medium tracking-wide"
-            style={{
-              
-              textShadow:
-                "0 0 3px #56dbed, 0 0 4 0px #4ca1af, 0 0 30px #2c3e50",
-            }}
-          >
-            {tech.name}
-          </span>
+  className="!text-white text-base font-medium tracking-wide transition duration-300"
+  style={{
+    textShadow:
+      "0 0 3px #56dbed, 0 0 40px #4ca1af, 0 0 30px #2c3e50",
+  }}
+>
+  {tech.name}
+</span>
+
         </motion.div>
       ))}
     </div>
