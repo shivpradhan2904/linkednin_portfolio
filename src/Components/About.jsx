@@ -29,7 +29,7 @@ function About() {
         {/* Title */}
         <div className="text-center">
           <div
-            className="sm:text-4xl text-xl mt-2  font-bold bg-gradient-to-r from-[#56dbed] via-[#8fe3ffb0] to-[#0ce7d5ea] text-transparent bg-clip-text animate-gradient"
+            className="sm:text-4xl text-xl mt-7  font-bold bg-gradient-to-r from-[#56dbed] via-[#8fe3ffb0] to-[#0ce7d5ea] text-transparent bg-clip-text animate-gradient"
             style={{
               textShadow: "0 0 3px #56dbed, 0 0 20px #4ca1af, 0 0 30px #2c3e50",
               // fontFamily: "'Tagesschrift', cursive",

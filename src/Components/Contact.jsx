@@ -56,66 +56,65 @@ function Contact() {
         <div className="flex-1 w-full overflow-y-auto px-2 sm:px-4 sm:py-3 space-y-3 mt-5">
           {/* Contact Form Section */}
           <div className="flex flex-col md:flex-row gap-5 justify-center mt-12 sm:mt-5">
-          <form
-  onSubmit={handleSubmit}
-  className="w-full md:w-[50%] bg-transparent p-2 sm:p-6 rounded-xl shadow-md mx-auto"
->
-  <div className="w-full space-y-5">
-    <h3 className="sm:text-2xl text-lg font-bold text-cyan-400 text-center transition-all duration-300">
-      Get in Touch
-    </h3>
+            <form
+              onSubmit={handleSubmit}
+              className="w-full md:w-[50%] bg-transparent p-2 sm:p-6 rounded-xl shadow-md mx-auto"
+            >
+              <div className="w-full space-y-5">
+                <h3 className="sm:text-2xl text-lg font-bold text-cyan-400 text-center transition-all duration-300">
+                  Get in Touch
+                </h3>
 
-    {/* Name */}
-    <div className="flex items-center bg-transparent border border-cyan-400/30 sm:p-3 p-2 rounded-md">
-      <FaUser className="text-cyan-400 mr-2" />
-      <input
-        type="text"
-        name="name"
-        placeholder="Your Name"
-        value={formData.name}
-        onChange={handleChange}
-        required
-        className="bg-transparent w-full text-white outline-none placeholder-white/70 placeholder:text-sm sm:placeholder:text-base"
-      />
-    </div>
+                {/* Name */}
+                <div className="flex items-center bg-transparent border border-cyan-400/30 sm:p-3 p-2 rounded-md">
+                  <FaUser className="text-cyan-400 mr-2" />
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="bg-transparent w-full text-white outline-none placeholder-white/70 placeholder:text-sm sm:placeholder:text-base"
+                  />
+                </div>
 
-    {/* Email */}
-    <div className="flex items-center bg-transparent border border-cyan-400/30 p-3 rounded-md">
-      <FaEnvelope className="text-cyan-400 mr-2" />
-      <input
-        type="email"
-        name="email"
-        placeholder="Your Email"
-        value={formData.email}
-        onChange={handleChange}
-        required
-        className="bg-transparent w-full text-white outline-none placeholder-white/70 placeholder:text-sm sm:placeholder:text-base"
-      />
-    </div>
+                {/* Email */}
+                <div className="flex items-center bg-transparent border border-cyan-400/30 p-3 rounded-md">
+                  <FaEnvelope className="text-cyan-400 mr-2" />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="bg-transparent w-full text-white outline-none placeholder-white/70 placeholder:text-sm sm:placeholder:text-base"
+                  />
+                </div>
 
-    {/* Message */}
-    <textarea
-      name="message"
-      placeholder="Your Message"
-      rows="4"
-      value={formData.message}
-      onChange={handleChange}
-      required
-      className="w-full p-3 rounded-md bg-transparent border border-cyan-400/30 text-white outline-none placeholder-white/70 placeholder:text-sm sm:placeholder:text-base"
-    ></textarea>
+                {/* Message */}
+                <textarea
+                  name="message"
+                  placeholder="Your Message"
+                  rows="4"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  className="w-full p-3 rounded-md bg-transparent border border-cyan-400/30 text-white outline-none placeholder-white/70 placeholder:text-sm sm:placeholder:text-base"
+                ></textarea>
 
-    {/* Submit Button */}
-    <div className="flex justify-center">
-      <button
-        type="submit"
-        className="bg-cyan-500 hover:bg-cyan-600 px-4 sm:px-6 py-2 rounded-md font-semibold text-[12px] sm:text-lg transition-all duration-300"
-      >
-        Send Message
-      </button>
-    </div>
-  </div>
-</form>
-
+                {/* Submit Button */}
+                <div className="flex justify-center">
+                  <button
+                    type="submit"
+                    className="bg-cyan-500 hover:bg-cyan-600 px-4 sm:px-6 py-2 rounded-md font-semibold text-[12px] sm:text-lg transition-all duration-300"
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </div>
+            </form>
           </div>
 
           {/* Social Links */}
@@ -181,9 +180,13 @@ function Contact() {
                     >
                       {icon}
                     </div>
-                    <span className="text-[8px] sm:text-sm font-bold text-white group-hover:text-current transition-all duration-300">
+                    <span
+                      className="text-[8px] sm:text-sm font-bold text-white group-hover:text-inherit transition-all duration-300"
+                      style={{ color: "white" }}
+                    >
                       {label}
                     </span>
+
                     <span
                       className={`absolute -bottom-1 left-0 w-0 h-[2px] ${underlineColor} transition-all duration-500 group-hover:w-full`}
                     ></span>
@@ -201,7 +204,11 @@ function Contact() {
                 <div className="text-gray-400 hover:text-gray-300 text-4xl p-4 rounded-full border border-transparent group-hover:border-current group-hover:scale-110 group-hover:shadow-lg transition-all duration-500">
                   <FaGithub />
                 </div>
-                <span className="text-sm font-bold text-white group-hover:text-gray-400 transition-all duration-300">
+                <span
+                  className="text-sm font-bold text-white group-hover:text-gray-400 transition-all duration-300"
+                  style={{ color: "white" }}
+                >
+                  {" "}
                   GitHub
                 </span>
                 <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-gray-400 transition-all duration-500 group-hover:w-full"></span>
