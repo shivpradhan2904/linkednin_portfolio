@@ -24,7 +24,7 @@ const projects = [
     description:
       "A front-end clone of the Netflix homepage built using pure HTML, CSS, and vanilla JavaScript. It features a fully responsive layout, modern UI with flexbox/grid, hover animations, and smooth scrolling. ",
     image: netflix,
-    visitLink: "https://bejewelled-paletas-f859b7.netlify.app/",
+    visitLink: "https://shiv-flix-stream.netlify.app/",
     codeLink: "https://github.com/shivpradhan2904/NETFLIX",
     skills: ["HTML", "CSS", "JavaScript"],
   },
