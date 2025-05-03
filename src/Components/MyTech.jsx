@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, {  useEffect, useRef } from 'react';
 import html from "../assets/images/Tech/html.png";
 import css from "../assets/images/Tech/css1.png";
 import js from "../assets/images/Tech/javascript.png";
@@ -29,7 +29,6 @@ const techs = [
 ];
 
 function MyTech() {
-  const [inView, setInView] = useState(false);
 
   // Ref for each tech card
   const techRef = useRef([]);
@@ -100,12 +99,13 @@ function MyTech() {
             <img
               src={tech.image}
               alt={tech.name}
-              className="w-full h-full object-contain group-hover:scale-105 group-hover:drop-shadow-[0_0_10px_rgba(0,255,255,0.6)] transition-transform duration-300"
+              className="w-full h-full object-contain group-hover:scale-105 group-hover:drop-shadow-[0_0_10px_rgba(0,255,255,0.6)] transition-transform duration-300 bg-[#3290978d] shadow-[0_0_15px_5px_rgba(0,255,255,0.4)]"
             />
           </div>
           <span
             className="text-white text-base font-medium tracking-wide"
             style={{
+              
               textShadow:
                 "0 0 3px #56dbed, 0 0 4 0px #4ca1af, 0 0 30px #2c3e50",
             }}

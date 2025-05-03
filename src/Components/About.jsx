@@ -236,7 +236,7 @@ function InfoRow({ icon, text }) {
       className="flex items-center gap-2"
     >
       <span>{icon}</span>
-      <p className="sm:text-lg text-[12px]">{text}</p>
+      <p className="sm:text-lg text-[14px]">{text}</p>
     </motion.div>
   );
 }

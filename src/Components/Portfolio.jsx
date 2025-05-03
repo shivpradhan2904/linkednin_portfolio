@@ -50,7 +50,7 @@ function Portfolio() {
         }}
       >
         <div
-          className="relative flex justify-center w-full gap-2  h-[3rem] sm:h-[4rem] p-2 mt-[4rem]"
+          className="relative flex justify-center w-full gap-2 h-[3.5rem] sm:h-[5rem] p-2 mt-[4rem]"
           ref={containerRef}
         >
           {boxes.map((box, index) => (
@@ -58,23 +58,28 @@ function Portfolio() {
               key={box.id}
               onClick={() => setSelectedBox(box.id)}
               ref={(el) => (boxRefs.current[index] = el)}
-              className={`group font-semibold flex flex-col items-center justify-center w-72 rounded-lg cursor-pointer text-lg
-            transition-all duration-400 ease-in-out
-            ${
-              selectedBox === box.id
-                ? "bg-[#3290978d] shadow-[0_0_15px_5px_rgba(0,255,255,0.4)]"
-                : "shadow-none"
-            }
-            hover:shadow-[0_0_15px_5px_rgba(0,255,255,0.4)]`}
+              className={`group font-semibold flex flex-col items-center justify-center w-76 rounded-lg cursor-pointer text-lg p-2
+        transition-all duration-400 ease-in-out
+        ${
+          selectedBox === box.id
+            ? "bg-[#3290978d] shadow-[0_0_15px_5px_rgba(0,255,255,0.4)]"
+            : "shadow-none"
+        }
+        hover:shadow-[0_0_15px_5px_rgba(0,255,255,0.4)]`}
             >
               <img
                 src={box.img}
                 alt={box.label}
                 className={`sm:w-6 sm:h-6 h-4 w-4 mb-1 transition-all duration-200 invert
-              group-hover:drop-shadow-[0_0_5px_white]
-              ${selectedBox === box.id ? "drop-shadow-[0_0_5px_white]" : ""}`}
+          group-hover:drop-shadow-[0_0_5px_white]
+          ${selectedBox === box.id ? "drop-shadow-[0_0_5px_white]" : ""}`}
               />
-              <span className="font-bold text-[12px] sm:text-lg text-white">{box.label}</span>
+              <span
+                className={`font-bold !text-white text-[12px] sm:text-lg transition duration-300
+    ${selectedBox === box.id ? "drop-shadow-[0_0_6px_white]" : ""}`}
+              >
+                {box.label}
+              </span>
             </div>
           ))}
 
