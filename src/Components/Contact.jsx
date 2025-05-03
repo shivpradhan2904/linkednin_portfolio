@@ -129,7 +129,7 @@ function Contact() {
               Connect with Me
             </h3>
 
-            <div className="flex flex-wrap justify-center gap-3 sm:gap-8 w-full max-w-2xl mb-4">
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-8 w-full max-w-2xl mb-4">
               {[
                 {
                   icon: <FaLinkedin />,
