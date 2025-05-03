@@ -74,7 +74,7 @@ function Portfolio() {
               group-hover:drop-shadow-[0_0_5px_white]
               ${selectedBox === box.id ? "drop-shadow-[0_0_5px_white]" : ""}`}
               />
-              <span className="font-bold text-[10px] sm:text-lg text-white">{box.label}</span>
+              <span className="font-bold text-[12px] sm:text-lg text-white">{box.label}</span>
             </div>
           ))}
 

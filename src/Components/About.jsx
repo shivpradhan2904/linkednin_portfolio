@@ -186,12 +186,12 @@ function Circle({ circleTitle, circleImage, duration }) {
           className="sm:h-[45px] sm:w-[45px] w-[40px] h-[40px] invert mb-5"
         />
         <div
-          className="md:text-2xl text-sm sm:text-lg font-bold bg-gradient-to-r from-[#b5f3fb] via-[#ffffff] to-[#ffffffea] text-transparent bg-clip-text"
+          className="md:text-2xl text-xl sm:text-lg font-bold bg-gradient-to-r from-[#b5f3fb] via-[#ffffff] to-[#ffffffea] text-transparent bg-clip-text"
           // style={{ fontFamily: "'Cal Sans', cursive" }}
         >
           {circleTitle}
         </div>
-        <span className="font-bold text-xl">{duration}</span>
+        <span className="font-bold text-sm">{duration}</span>
       </div>
     </motion.div>
   );
@@ -209,7 +209,7 @@ function TextBox({ title, institution, location, duration }) {
       className="bg-transparent shadow-2xl backdrop-blur-md rounded-3xl px-4 py-4 w-full max-w-lg"
     >
       <h2
-        className="text-xl md:text-2xl font-semibold text-[#86fff3] mb-4 text-center"
+        className="text-2xl md:text-2xl font-semibold text-[#86fff3] mb-4 text-center"
         style={{
           textShadow: "0 0 10px #fff, 0 0 20px #4ca1af, 0 0 30px #2c3e50",
         }}
