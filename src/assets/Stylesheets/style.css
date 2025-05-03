@@ -16,7 +16,7 @@
   display: inline-block;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
-  background: linear-gradient(90deg, #56b2be, #b365c3, #328ac1, #34ded0); /* Purple gradient */
+  background: linear-gradient(90deg, #47a3af, #2ca5bd, #669fd8, #34ded0); /* Purple gradient */
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -212,4 +212,127 @@
 .hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+/* Add this to your CSS file or inside your tailwind.config.js */
+::-webkit-scrollbar {
+  width: 0px; /* Hide scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent; /* Optional: Customize the thumb */
+}
+
+  @keyframes projects-fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-projects-fade-up {
+    animation: projects-fade-up 1s ease-out forwards;
+  }
+  @keyframes modal-fade-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-modal-fade-in {
+    animation: modal-fade-in 0.3s ease-out forwards;
+  }
+
+  /* Smooth transitions for images in certificates */
+  .group:hover img {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.05);
+  }
+
+  /* Add smooth landing fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* Modal Fade-in Effect */
+@keyframes modal-fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-modal-fade-in {
+  animation: modal-fade-in 0.3s ease-out forwards;
+}
+/* Scoped styling for the Navbar */
+.navbar {
+  z-index: 50;
+}
+
+.avatar img {
+  object-fit: cover;
+}
+
+.name {
+  font-family: 'Dancing Script', cursive;
+}
+
+/* Marquee text styling (if needed) */
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Other styles related to the navbar and menu */
+.lighting-link {
+  transition: all 0.3s ease;
+}
+
+.lighting-link:hover {
+  color: #d7e1e0;
+  transform: scale(1.1);
+}
+
+/* Apply styles for button */
+.group span {
+  color: black;
+  transition: color 0.3s;
+}
+
+.group:hover span {
+  color: white;
 }

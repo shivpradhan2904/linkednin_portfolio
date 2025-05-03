@@ -32,7 +32,7 @@ function About() {
             className="sm:text-4xl text-xl mt-2  font-bold bg-gradient-to-r from-[#56dbed] via-[#8fe3ffb0] to-[#0ce7d5ea] text-transparent bg-clip-text animate-gradient"
             style={{
               textShadow: "0 0 3px #56dbed, 0 0 20px #4ca1af, 0 0 30px #2c3e50",
-              fontFamily: "'Tagesschrift', cursive",
+              // fontFamily: "'Tagesschrift', cursive",
             }}
           >
             My Academic Journey
@@ -159,24 +159,21 @@ function Section({
 
 // Circle Component
 
+
+
 function Circle({ circleTitle, circleImage, duration }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50, scale: 0.8 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: true, amount: 0.4 }}
-      transition={{
-        type: "spring",
-        stiffness: 60,
-        damping: 12,
-        duration: 0.8,
-      }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className="relative 
-      w-[200px] h-[200px]              // base (mobile)
-      sm:w-[34vh] sm:h-[23vh]         // small screens (≥640px)
-      md:w-[34vh] md:h-[33vh]        // medium screens (≥768px)
-      lg:w-[34vh] lg:h-[35vh]      // large screens (≥1024px)
-      xl:w-[34vh] xl:h-[35vh]    // extra large screens (≥1280px)
+      w-[200px] h-[200px]              
+      sm:w-[34vh] sm:h-[23vh]         
+      md:w-[34vh] md:h-[27vh]        
+      lg:w-[34vh] lg:h-[35vh]      
+      xl:w-[34vh] xl:h-[35vh]    
       rounded-full overflow-hidden 
       flex justify-center items-center 
       hover:scale-110 transition-transform duration-500 ease-in-out"
@@ -189,8 +186,8 @@ function Circle({ circleTitle, circleImage, duration }) {
           className="sm:h-[45px] sm:w-[45px] w-[40px] h-[40px] invert mb-5"
         />
         <div
-          className="md:text-2xl text-sm sm:text-lg  font-bold bg-gradient-to-r from-[#b5f3fb] via-[#ffffff] to-[#ffffffea] text-transparent bg-clip-text"
-          style={{ fontFamily: "'Cal Sans', cursive" }}
+          className="md:text-2xl text-sm sm:text-lg font-bold bg-gradient-to-r from-[#b5f3fb] via-[#ffffff] to-[#ffffffea] text-transparent bg-clip-text"
+          // style={{ fontFamily: "'Cal Sans', cursive" }}
         >
           {circleTitle}
         </div>
@@ -199,6 +196,8 @@ function Circle({ circleTitle, circleImage, duration }) {
     </motion.div>
   );
 }
+
+
 
 // TextBox Component
 function TextBox({ title, institution, location, duration }) {

@@ -1,10 +1,11 @@
 import React from "react";
-import food from "../assets/images/food.jpg";
-import netflix from "../assets/images/netflix.jpg";
+import food from "../assets/images/foo.jpg";
+import netflix from "../assets/images/net.webp";
 import smart from "../assets/images/smart.webp";
 import currency from "../assets/images/currency.png";
-import portfolio from "../assets/images/portfolio.webp";
+import portfolio from "../assets/images/port.jpg";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -77,8 +78,16 @@ function Projects() {
           }}
         >
           {projects.slice(0, 5).map((proj, index) => (
-            <div
+            <motion.div
               key={proj.id}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+                ease: "easeOut",
+              }}
               className="snap-center transform-gpu transition-transform duration-300 ease-in-out scale-90 hover:scale-100"
               style={{
                 transformOrigin: "center",
@@ -91,10 +100,9 @@ function Projects() {
                   className="w-full h-36 object-cover rounded-md"
                 />
                 <h2
-                  className="text-base font-bold text-cyan-300"
+                  className="text-base font-bold text-cyan-300 bg-[#00000000] rounded-lg pl-2"
                   style={{
                     boxShadow: "0 0px 30px rgba(97, 151, 141, 0.56)",
-                    backgroundColor: "rgba(255, 255, 255, 0.1)",
                   }}
                 >
                   {proj.title}
@@ -110,35 +118,40 @@ function Projects() {
                     </span>
                   ))}
                 </div>
-                <div className="flex justify-between mt-2 text-xs">
+                <div className="flex justify-between items-center w-full mt-auto gap-2">
                   <a
                     href={proj.codeLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-cyan-400 hover:underline"
+                    className="flex-1 flex items-center justify-center gap-2 px-4 py-1 bg-[#6ebccc5e] hover:bg-[#1f3436b7] text-white text-[10px] font-medium rounded-md border border-transparent hover:border-white transition-all duration-300 transform hover:scale-105"
                   >
-                    Source Code
+                    <FaGithub className="text-[10px]" />
+                    Code
                   </a>
                   <a
                     href={proj.visitLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-300 hover:underline"
+                    className="flex-1 flex items-center justify-center gap-2 px-4 py-1 bg-[#6ebccc5e] hover:bg-[#b4f2ff5e] text-white text-[10px] font-medium rounded-md border border-transparent hover:border-white transition-all duration-300 transform hover:scale-105"
                   >
+                    <FaExternalLinkAlt className="text-[10px]" />
                     Visit
                   </a>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
 
-      <div className=" proj_container hidden sm:flex flex-wrap justify-center items-center w-full min-h-screen gap-6 sm:gap-8 p-4 sm:p-8 bg-gradient-to-b from-transparent via-black/20 to-transparent">
-        {projects.map((proj) => (
+      <div className="proj_container hidden sm:flex flex-wrap justify-center items-center w-full min-h-screen gap-6 sm:gap-8 p-4 sm:p-8 bg-gradient-to-b from-transparent via-black/20 to-transparent">
+        {projects.map((proj, index) => (
           <div
             key={proj.id}
-            className="relative group w-full sm:w-[35%] sm:h-[440px] md:w-[31%] md:h-[450px]  lg:h-[450px] bg-[#1e293b]/80 text-white rounded-xl shadow-lg p-4 sm:p-5 flex flex-col items-start gap-3 transition-all duration-500 hover:scale-[1.02] border border-transparent hover:border-cyan-400"
+            className={`relative cursor-pointer  group w-full sm:w-[35%] sm:h-[440px] md:w-[31%] md:h-[450px] lg:h-[450px] bg-[#1e293b]/80 text-white rounded-xl shadow-lg p-4 sm:p-5 flex flex-col items-start gap-3 transition-all duration-500 hover:scale-[1.02] border border-transparent hover:border-cyan-400 opacity-0 animate-projects-fade-up`}
+            style={{
+              animationDelay: `${index * 0.1}s`, // Adds a delay between each project for the smooth effect
+            }}
           >
             <span className="absolute bottom-2 left-4 right-4 h-[2px] bg-cyan-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-full"></span>
 

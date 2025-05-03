@@ -78,7 +78,6 @@ function Home() {
       setDownloading(false);
     }, 2000); // fake loading effect
   };
-  
 
   const handleToggle = () => {
     setShowInfo((prev) => !prev);
@@ -117,7 +116,7 @@ function Home() {
     >
       <div className="flex justify-center items-center mt-[0.5rem] xl:mt-[3.5rem] relative p-5">
         <div
-          className="box md:mt-0 mt-3 md:hover:h-[44rem] md:h-[42rem] lg:h-[43rem] md:w-[91rem] md:hover:w-[91rem] h-full w-full bg-transparent shadow-2xl bg-opacity-50 backdrop-blur-md rounded-3xl flex flex-col justify-between items-center px-4 py-0 sm:py-2 transition-all duration-300 ease-in-out"
+          className="box md:mt-0 mt-3 md:hover:h-[43rem] md:h-[42rem] lg:h-[43rem] md:w-[91rem] md:hover:w-[92rem] h-full w-full bg-transparent shadow-2xl bg-opacity-50 backdrop-blur-md rounded-3xl flex flex-col justify-between items-center px-4 py-0 sm:py-2 transition-all duration-300 ease-in-out"
           style={{
             boxShadow: "0 0px 30px rgba(114, 212, 186, 0.31)",
             backgroundColor: "rgba(255, 255, 255, 0.1)",
@@ -232,7 +231,7 @@ function Home() {
                   >
                     Shiv here 🚀
                   </span>{" "}
-                  <span style={{ fontFamily: "Bodoni Moda, cursive" }}>
+                  <span >
                     — crafting cool and clean UI experiences and I love building
                     clean and interactive user interfaces 💻.
                     <div className="border-b border-cyan-300 my-2"></div>I enjoy
@@ -348,7 +347,7 @@ function Home() {
             </h2>
             <p
               className="text-center mb-4 text-[12px] sm:text-[17px] text-cyan-100"
-              style={{ fontFamily: "'Tagesschrift', cursive" }}
+              // style={{ fontFamily: "'Tagesschrift', cursive" }}
             >
               I am currently studying MCA at{" "}
               <span className="text-yellow-300 font-semibold">
@@ -365,7 +364,7 @@ function Home() {
             </h3>
             <p
               className="text-center text-[12px] sm:text-[18px] sm:mb-4 text-cyan-100"
-              style={{ fontFamily: "'Tagesschrift', cursive" }}
+              // style={{ fontFamily: "'Tagesschrift', cursive" }}
             >
               I am currently based in{" "}
               <span className="text-green-300 font-semibold">
@@ -382,7 +381,8 @@ function Home() {
               <p
                 style={{
                   color: "white",
-                  textShadow: "0 0 10px #fff, 0 0 20px #4ca1af, 0 0 30px #2c3e50",
+                  textShadow:
+                    "0 0 10px #fff, 0 0 20px #4ca1af, 0 0 30px #2c3e50",
                 }}
               >
                 "A day without laughter is a day wasted." — Charlie Chaplin

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ai from "../assets/images/certificate/ai.png";
 import edu from "../assets/images/certificate/edu.png";
 import iit from "../assets/images/certificate/IIT.png";
@@ -7,16 +7,42 @@ import introoopsjv from "../assets/images/certificate/introoopsjv.png";
 import oopsjv from "../assets/images/certificate/oopsjv.png";
 import mysql from "../assets/images/certificate/mysql.png";
 import react from "../assets/images/certificate/React.png";
-import { div } from "framer-motion/client";
+import { motion } from "framer-motion";
+
 
 function Certifications() {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [inView, setInView] = useState(false);
 
+  // Ref to track visibility
+  const certificateRef = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setInView(true);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    if (certificateRef.current) {
+      observer.observe(certificateRef.current);
+    }
+
+    return () => {
+      if (certificateRef.current) {
+        observer.disconnect();
+      }
+    };
+  }, []);
   const allCertificates = [ai, mysql, react, oopsjv, introjv, introoopsjv, edu];
 
   return (
     <div>
-      <div className="sm:hidden block w-full min-h-screen bg-gradient-to-b from-transparent via-black/20 to-transparent p-4 sm:p-8">
+      <div className="sm:hidden block w-full min-h-screen bg-gradient-to-b from-transparent via-[#fff0] to-transparent p-4 sm:p-8">
         {/* IIT Certificate */}
         <div className="flex justify-center mb-6">
           <div
@@ -48,21 +74,26 @@ function Certifications() {
             }}
           >
             {allCertificates.map((src, index) => (
-              <div
-                key={index}
-                onClick={() => setSelectedImage(src)}
-                className="transform-gpu transition-transform duration-300 ease-in-out scale-95 hover:scale-100"
-                style={{ transformOrigin: "center" }}
-              >
-                <div className="w-full max-w-[20rem] mx-auto bg-[#1e293b]/80 rounded-xl shadow-lg p-3 text-white flex flex-col gap-2 border border-white/10">
-                  <img
-                    src={src}
-                    alt={`Certificate ${index + 1}`}
-                    className="w-full h-[9rem] object-contain rounded-md"
-                  />
-                </div>
-              </div>
-            ))}
+  <motion.div
+    key={index}
+    onClick={() => setSelectedImage(src)}
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.3 }}
+    transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.05 }}
+    className="transform-gpu transition-transform duration-300 ease-in-out scale-95 hover:scale-100"
+    style={{ transformOrigin: "center" }}
+  >
+    <div className="w-full max-w-[20rem] mx-auto bg-[#03191f66] rounded-xl shadow-lg p-1 text-white flex flex-col gap-2 border border-white/10">
+      <img
+        src={src}
+        alt={`Certificate ${index + 1}`}
+        className="w-full h-[9rem] object-contain rounded-md"
+      />
+    </div>
+  </motion.div>
+))}
+
           </div>
         </div>
 
@@ -76,7 +107,7 @@ function Certifications() {
               <img
                 src={selectedImage}
                 alt="Enlarged Certificate"
-                className="max-w-[95vw] max-h-[90vh] object-contain rounded-lg shadow-xl scale-105"
+                className="max-w-[80vw] max-h-[80vh] object-contain rounded-lg shadow-xl scale-105 "
               />
               <button
                 onClick={() => setSelectedImage(null)}
@@ -99,7 +130,7 @@ function Certifications() {
             <img
               src={iit}
               alt="IIT Certificate"
-              className="w-full h-auto object-contain rounded-lg group-hover:brightness-110"
+              className="w-full h-auto object-contain rounded-lg group-hover:brightness-110 transition-all duration-300"
             />
             <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-cyan-400 group-hover:w-full transition-all duration-500 rounded-full"></span>
           </div>
@@ -111,7 +142,12 @@ function Certifications() {
         </h2>
 
         {/* Certificate Grid */}
-        <div className="hidden sm:flex flex-wrap justify-center gap-6 sm:gap-7">
+        <div
+          ref={certificateRef}
+          className={`hidden sm:flex flex-wrap justify-center gap-6 sm:gap-7 ${
+            inView ? "animate-fadeIn" : "opacity-0"
+          } transition-opacity duration-1000`}
+        >
           {allCertificates.map((src, idx) => (
             <div
               key={idx}
@@ -121,7 +157,7 @@ function Certifications() {
               <img
                 src={src}
                 alt={`Certificate ${idx + 1}`}
-                className="w-full h-auto object-contain rounded-lg group-hover:brightness-110"
+                className="w-full h-auto object-contain rounded-lg group-hover:brightness-110 transition-all duration-300"
               />
               <span className="absolute bottom-0 left-0 h-[1px] sm:h-[2px] w-0 bg-cyan-400 group-hover:w-full transition-all duration-500 rounded-full"></span>
             </div>
@@ -131,14 +167,14 @@ function Certifications() {
         {/* Modal for All Certificates (including IIT) */}
         {selectedImage && (
           <div
-            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4 opacity-0 animate-modal-fade-in"
             onClick={() => setSelectedImage(null)}
           >
-            <div className="relative w-full max-w-[50vw] max-h-[40vh]">
+            <div className="relative w-full max-w-[70vh] max-h-[40vh]">
               <img
                 src={selectedImage}
                 alt="Enlarged Certificate"
-                className="w-full h-full object-contain rounded-lg shadow-xl"
+                className="w-full h-full object-contain rounded-lg shadow-xl transition-all duration-300 transform scale-105"
               />
               <button
                 onClick={() => setSelectedImage(null)}
