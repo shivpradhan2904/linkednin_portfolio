@@ -181,7 +181,7 @@ function Contact() {
                       {icon}
                     </div>
                     <span
-                      className="text-[8px] sm:text-sm font-bold text-white group-hover:text-inherit transition-all duration-300"
+                      className="text-sm sm:text-sm font-bold text-white group-hover:text-inherit transition-all duration-300"
                       style={{ color: "white" }}
                     >
                       {label}
