@@ -30,10 +30,10 @@ function About() {
         <div className="text-center">
           <div
             className="sm:text-4xl text-xl mt-[2rem] sm:mt-[3rem]  font-bold bg-gradient-to-r from-[#56dbed] via-[#8fe3ffb0] to-[#0ce7d5ea] text-transparent bg-clip-text animate-gradient"
-            style={{
-              textShadow: "0 0 3px #56dbed, 0 0 20px #4ca1af, 0 0 30px #2c3e50",
-              // fontFamily: "'Tagesschrift', cursive",
-            }}
+            // style={{
+            //   textShadow: "0 0 3px #56dbed, 0 0 20px #4ca1af, 0 0 30px #2c3e50",
+            //   // fontFamily: "'Tagesschrift', cursive",
+            // }}
           >
             My Academic Journey
           </div>
@@ -210,9 +210,9 @@ function TextBox({ title, institution, location, duration }) {
     >
       <h2
         className="text-2xl md:text-2xl font-semibold text-[#86fff3] mb-4 text-center"
-        style={{
-          textShadow: "0 0 10px #fff, 0 0 20px #4ca1af, 0 0 30px #2c3e50",
-        }}
+        // style={{
+        //   textShadow: "0 0 10px #fff, 0 0 20px #4ca1af, 0 0 30px #2c3e50",
+        // }}
       >
         {title}
       </h2>

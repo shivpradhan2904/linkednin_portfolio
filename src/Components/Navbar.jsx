@@ -67,16 +67,16 @@ function Navbar() {
       {/* Mobile Menu (appears before sm and on hamburger click) */}
       <div
         ref={menuRef} // Add the reference to the menu container
-        className={`fixed top-0 left-0 w-full h-[9rem] bg-[#19b7bcb7] text-white text-center transform transition-all duration-300 ${
+        className={`fixed top-0 left-0 w-full h-[11rem] bg-[#19b7bcb7] text-white text-center transform transition-all duration-300 ${
           isMenuOpen ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <div className="flex flex-col space-y-2 justify-center items-center mt-3">
+        <div className="flex flex-col space-y-3 justify-center items-center mt-3">
           <Link
             to="portfolio"
             smooth={true}
             duration={500}
-            className="lighting-link text-[12px] hover:scale-110 hover:text-[#d7e1e0] transition-transform duration-300"
+            className="lighting-link text-[14px] hover:scale-110 hover:text-[#d7e1e0] transition-transform duration-300"
           >
             Home
           </Link>
@@ -84,7 +84,7 @@ function Navbar() {
             to="about"
             smooth={true}
             duration={500}
-            className="lighting-link text-[12px] hover:scale-110 hover:text-[#d7e1e0] transition-transform duration-300"
+            className="lighting-link text-[14px] hover:scale-110 hover:text-[#d7e1e0] transition-transform duration-300"
           >
             Education
           </Link>
@@ -92,7 +92,7 @@ function Navbar() {
             to="Portfolio"
             smooth={true}
             duration={500}
-            className="lighting-link text-[12px] hover:scale-110 hover:text-[#d7e1e0] transition-transform duration-300"
+            className="lighting-link text-[14px] hover:scale-110 hover:text-[#d7e1e0] transition-transform duration-300"
           >
             Portfolio
           </Link>
@@ -100,20 +100,20 @@ function Navbar() {
             to="contact"
             smooth={true}
             duration={500}
-            className="lighting-link text-[12px] hover:scale-110 hover:text-[#d7e1e0] transition-transform duration-300"
+            className="lighting-link text-[14px] hover:scale-110 hover:text-[#d7e1e0] transition-transform duration-300"
           >
             Contact Us
           </Link>
           {/* "Let's Talk" Button in Mobile Menu */}
           <div
-            className="group box jumping h-[1rem] w-[5rem] md:h-[2rem] md:w-[7rem] border-[1px] border-black bg-[#0fc4fbbc] rounded-3xl px-0.5 flex justify-center items-center cursor-pointer shadow-md hover:shadow-lg transition-transform duration-300 hover:bg-black hover:scale-110"
+            className="group box jumping h-[1.5em] w-[5.5rem] md:h-[2rem] md:w-[7rem] border-[1px] border-black bg-[#0fc4fbbc] rounded-3xl px-0.5 flex justify-center items-center cursor-pointer shadow-md hover:shadow-lg transition-transform duration-300 hover:bg-black hover:scale-110"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             <a
               href="tel:+919078738600"
               className="flex justify-center items-center w-full h-full"
             >
-              <span className="font-semibold sm:text-[10px] text-[7px] md:text-[13px] pt-0.5 text-black transition-colors duration-300 group-hover:text-white">
+              <span className="font-semibold sm:text-[15px] text-[10px] md:text-[13px] pt-0.5 text-black transition-colors duration-300 group-hover:text-white">
                 Let's Talk
               </span>
               <span className="hidden sm:block md:ml-1 font-bold sm:font-semibold text-black transition-colors duration-300 group-hover:text-white">

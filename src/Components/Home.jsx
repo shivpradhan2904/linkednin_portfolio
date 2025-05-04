@@ -219,11 +219,11 @@ function Home() {
               <div className="text-center sm:mt-4 md:mt-1">
                 <p
                   className="text-[#fff] md:text-lg text-[10px] px-4 max-w-2xl"
-                  style={{
-                    color: "white",
-                    textShadow:
-                      "0 0 3px #ffffff, 0 0 10px #ffffffb3, 0 0 20px #ffffff",
-                  }}
+                  // style={{
+                  //   color: "white",
+                  //   textShadow:
+                  //     "0 0 3px #ffffff, 0 0 10px #ffffffb3, 0 0 20px #ffffff",
+                  // }}
                 >
                   <span
                     className="font-semibold text-xl md:text-3xl text-cyan-300"

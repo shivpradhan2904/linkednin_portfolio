@@ -9,7 +9,6 @@ import mysql from "../assets/images/certificate/mysql.png";
 import react from "../assets/images/certificate/React.png";
 import { motion } from "framer-motion";
 
-
 function Certifications() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [inView, setInView] = useState(false);
@@ -40,6 +39,19 @@ function Certifications() {
   }, []);
   const allCertificates = [ai, mysql, react, oopsjv, introjv, introoopsjv, edu];
 
+  useEffect(() => {
+    if (selectedImage) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  
+    // Cleanup in case component unmounts while modal is open
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [selectedImage]);
+  
   return (
     <div>
       <div className="sm:hidden block w-full min-h-screen bg-gradient-to-b from-transparent via-[#fff0] to-transparent p-4 sm:p-8">
@@ -74,26 +86,29 @@ function Certifications() {
             }}
           >
             {allCertificates.map((src, index) => (
-  <motion.div
-    key={index}
-    onClick={() => setSelectedImage(src)}
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, amount: 0.3 }}
-    transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.05 }}
-    className="transform-gpu transition-transform duration-300 ease-in-out scale-95 hover:scale-100"
-    style={{ transformOrigin: "center" }}
-  >
-    <div className="w-full max-w-[20rem] mx-auto bg-[#03191f66] rounded-xl shadow-lg p-1 text-white flex flex-col gap-2 border border-white/10">
-      <img
-        src={src}
-        alt={`Certificate ${index + 1}`}
-        className="w-full h-[9rem] object-contain rounded-md"
-      />
-    </div>
-  </motion.div>
-))}
-
+              <motion.div
+                key={index}
+                onClick={() => setSelectedImage(src)}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{
+                  duration: 0.4,
+                  ease: "easeOut",
+                  delay: index * 0.05,
+                }}
+                className="transform-gpu transition-transform duration-300 ease-in-out scale-95 hover:scale-100"
+                style={{ transformOrigin: "center" }}
+              >
+                <div className="w-full max-w-[20rem] mx-auto bg-[#03191f66] rounded-xl shadow-lg p-1 text-white flex flex-col gap-2 border border-white/10">
+                  <img
+                    src={src}
+                    alt={`Certificate ${index + 1}`}
+                    className="w-full h-[9rem] object-contain rounded-md"
+                  />
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
 
@@ -167,10 +182,10 @@ function Certifications() {
         {/* Modal for All Certificates (including IIT) */}
         {selectedImage && (
           <div
-            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4 opacity-0 animate-modal-fade-in"
+            className="fixed inset-0 bg-black/80 flex items-center justify-center z-40 p-4 opacity-0 animate-modal-fade-in"
             onClick={() => setSelectedImage(null)}
           >
-            <div className="relative w-full max-w-[70vh] max-h-[40vh]">
+            <div className="relative w-full max-w-[70vh] h-full">
               <img
                 src={selectedImage}
                 alt="Enlarged Certificate"
