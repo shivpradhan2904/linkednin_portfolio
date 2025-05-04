@@ -232,7 +232,7 @@ function Contact() {
               // textShadow: "0 0 10px #fff, 0 0 20px #4ca1af, 0 0 30px #2c3e50",
             }}
           >
-            © 2025 Your Name. All Rights Reserved.
+            © 2025 Shiv. All Rights Reserved.
           </p>
         </div>
       </div>

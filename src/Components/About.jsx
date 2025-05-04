@@ -9,7 +9,7 @@ import sc from "../assets/images/school.png"; // Replace with your image
 function About() {
   return (
     <div
-      className="w-full min-h-screen flex flex-col justify-center items-center text-white overflow-x-hidden p-2"
+      className="w-full h-full flex flex-col justify-center items-center text-white overflow-x-hidden p-2"
       style={{
         backgroundImage: `url(${image2})`,
         backgroundSize: "cover",
