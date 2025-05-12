@@ -123,7 +123,7 @@ function Contact() {
               className="text-lg sm:text-2xl font-bold mb-3"
               style={{
                 color: "cyan",
-                textShadow: "0 0 10px #fff, 0 0 20px #4ca1af, 0 0 30px #2c3e50",
+                // textShadow: "0 0 10px #fff, 0 0 20px #4ca1af, 0 0 30px #2c3e50",
               }}
             >
               Connect with Me

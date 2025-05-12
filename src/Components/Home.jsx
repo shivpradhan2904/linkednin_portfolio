@@ -130,8 +130,8 @@ function Home() {
                 fontFamily: "Edu Australia VIC WA NT Hand Arrows, cursive",
               }}
             >
-              <span className="marquee-text">Welcome to my portfolio! 😉</span>
-              <span className="marquee-text">Welcome to my portfolio! 😉</span>
+              <span className="marquee-text">Welcome to my portfolio! </span>
+              <span className="marquee-text">Welcome to my portfolio! </span>
             </div>
           </div>
 
@@ -319,8 +319,8 @@ function Home() {
                 fontFamily: "Edu Australia VIC WA NT Hand Arrows, cursive",
               }}
             >
-              <span className="marquee-text">Welcome to my portfolio! 😉</span>
-              <span className="marquee-text">Welcome to my portfolio! 😉</span>
+              <span className="marquee-text">Welcome to my portfolio! </span>
+              <span className="marquee-text">Welcome to my portfolio! </span>
             </div>
           </div>
         </div>
