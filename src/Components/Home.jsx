@@ -114,7 +114,7 @@ function Home() {
         backgroundPosition: "center",
       }}
     >
-      <div className="flex justify-center items-center mt-[0.5rem] xl:mt-[3.5rem] relative p-5">
+      <div className="flex justify-center items-center  relative p-5">
         <div
           className="box md:mt-0 mt-3 md:hover:h-[43rem] md:h-[42rem] lg:h-[43rem] md:w-[91rem] md:hover:w-[92rem] h-full w-full bg-transparent shadow-2xl bg-opacity-50 backdrop-blur-md rounded-3xl flex flex-col justify-between items-center px-4 py-0 sm:py-2 transition-all duration-300 ease-in-out"
           style={{
