@@ -127,13 +127,13 @@ function Navbar() {
       {/* Navbar Links for larger screens (visible after sm breakpoint) */}
       <div
         className="hidden sm:flex space-x-4 md:space-x-6 text-white font-sans font-bold cursor-pointer"
-        style={{ fontFamily: "'Josefin Sans', cursive" }}
+        style={{ fontFamily: "'Raleway', cursive" }}
       >
         <Link
-          to="portfolio"
+          to="home"
           smooth={true}
           duration={500}
-          className="lighting-link text-[12px] flex justify-center items-center hover:scale-110 text-sm hover:text-[#d7e1e0] rounded-2xl p-1 transition-transform duration-300 shadow-md hover:shadow-lg"
+          className="lighting-link hover:scale-100 hover:text-[#d7e1e0] rounded-2xl px-2 py-1 transition-transform duration-300"
         >
           Home
         </Link>
@@ -142,23 +142,25 @@ function Navbar() {
           to="about"
           smooth={true}
           duration={500}
-          className="lighting-link hover:scale-110 hover:text-[#d7e1e0] rounded-2xl p-1 transition-transform duration-300 shadow-md hover:shadow-lg"
+          className="lighting-link hover:scale-100 hover:text-[#d7e1e0] rounded-2xl px-2 py-1 transition-transform duration-300"
         >
           Education
         </Link>
+
         <Link
-          to="Portfolio"
+          to="portfolio"
           smooth={true}
           duration={500}
-          className="lighting-link hover:scale-110 hover:text-[#d7e1e0] rounded-2xl p-1 transition-transform duration-300 shadow-md hover:shadow-lg"
+          className="lighting-link hover:scale-100 hover:text-[#d7e1e0] rounded-2xl px-2 py-1 transition-transform duration-300"
         >
           Portfolio
         </Link>
+
         <Link
           to="contact"
           smooth={true}
           duration={500}
-          className="lighting-link hover:scale-110 hover:text-[#d7e1e0] rounded-2xl p-1 transition-transform duration-300 shadow-md hover:shadow-lg"
+          className="lighting-link hover:scale-100 hover:text-[#d7e1e0] rounded-2xl px-2 py-1 transition-transform duration-300"
         >
           Contact Us
         </Link>
@@ -166,16 +168,18 @@ function Navbar() {
 
       {/* "Let's Talk" Button visible after sm breakpoint */}
       <div
-        className="group box jumping hidden sm:flex h-[1rem] w-[3rem] sm:h-[1.5rem] sm:w-[5rem] md:h-[2rem] md:w-[7rem] bg-[#ffffff] rounded-3xl px-0.5 justify-center items-center cursor-pointer shadow-md hover:shadow-lg transition-transform duration-300 hover:bg-black hover:scale-110"
-        style={{ fontFamily: "'Poppins', sans-serif" }}
-      >
-        <span className="font-semibold sm:text-[10px] text-[7px] md:text-[13px] pt-0.5 sm:pt-0 text-black transition-colors duration-300 group-hover:text-white">
-          Let's Talk
-        </span>
-        <span className="hidden sm:block md:ml-1 md:font-bold font-semibold text-black transition-colors duration-300 group-hover:text-white">
-          👍
-        </span>
-      </div>
+  className="group box jumping hidden sm:flex h-[1rem] w-[3rem] sm:h-[1.5rem] sm:w-[5rem] md:h-[2rem] md:w-[7rem] bg-[#ffffff] rounded-3xl px-0.5 justify-center items-center cursor-pointer shadow-md hover:shadow-lg transition-transform duration-300 hover:bg-black hover:scale-110"
+  style={{ fontFamily: "'Poppins', sans-serif" }}
+  onClick={() => window.location.href = "tel:+1234567890"}
+>
+  <span className="font-semibold sm:text-[10px] text-[7px] md:text-[13px] pt-0.5 sm:pt-0 text-black transition-colors duration-300 group-hover:text-white">
+    Let's Talk
+  </span>
+  <span className="hidden sm:block md:ml-1 md:font-bold font-semibold text-black transition-colors duration-300 group-hover:text-white">
+    👍
+  </span>
+</div>
+
     </div>
   );
 }

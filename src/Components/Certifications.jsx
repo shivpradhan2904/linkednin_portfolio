@@ -7,7 +7,6 @@ import introoopsjv from "../assets/images/certificate/introoopsjv.png";
 import oopsjv from "../assets/images/certificate/oopsjv.png";
 import mysql from "../assets/images/certificate/mysql.png";
 import react from "../assets/images/certificate/React.png";
-import { motion } from "framer-motion";
 
 function Certifications() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -37,25 +36,25 @@ function Certifications() {
       }
     };
   }, []);
+
   const allCertificates = [ai, mysql, react, oopsjv, introjv, introoopsjv, edu];
 
   useEffect(() => {
     if (selectedImage) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     }
-  
-    // Cleanup in case component unmounts while modal is open
+
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     };
   }, [selectedImage]);
-  
+
   return (
     <div>
       <div className="sm:hidden block w-full min-h-screen bg-gradient-to-b from-transparent via-[#fff0] to-transparent p-4 sm:p-8">
-        {/* IIT Certificate */}
+        // {/* IIT Certificate */}
         <div className="flex justify-center mb-6">
           <div
             className="relative group rounded-lg overflow-hidden shadow-lg transition-all duration-500 border border-transparent hover:border-cyan-400 hover:scale-105 cursor-pointer w-full max-w-[600px]"
@@ -69,7 +68,6 @@ function Certifications() {
             <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-cyan-400 group-hover:w-full transition-all duration-500 rounded-full"></span>
           </div>
         </div>
-
         {/* Small screen scrollable box */}
         <div className="block sm:hidden relative h-[550px] overflow-hidden mb-6">
           {/* Shadows */}
@@ -111,7 +109,6 @@ function Certifications() {
             ))}
           </div>
         </div>
-
         {/* Modal View */}
         {selectedImage && (
           <div
@@ -182,18 +179,21 @@ function Certifications() {
         {/* Modal for All Certificates (including IIT) */}
         {selectedImage && (
           <div
-            className="fixed inset-0 bg-black/80 flex items-center justify-center z-40 p-4 opacity-0 animate-modal-fade-in"
+            className="fixed top-0 left-0 w-full h-full bg-black/80 flex items-center justify-center z-40 p-4"
             onClick={() => setSelectedImage(null)}
           >
-            <div className="relative w-full max-w-[70vh] h-full">
+            <div
+              className="relative w-[80vw] max-w-[400px] max-h-[80vh] bg-black rounded-lg overflow-hidden"
+              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
+            >
               <img
                 src={selectedImage}
                 alt="Enlarged Certificate"
-                className="w-full h-full object-contain rounded-lg shadow-xl transition-all duration-300 transform scale-105"
+                className="w-full h-auto max-h-[60vh] object-contain rounded-lg shadow-xl"
               />
               <button
                 onClick={() => setSelectedImage(null)}
-                className="absolute top-2 right-2 text-white bg-black/60 hover:bg-black/80 rounded-full p-2"
+                className="absolute top-2 right-2 text-white bg-black/60 hover:bg-black/80 rounded-full p-2 text-lg"
               >
                 ✕
               </button>
@@ -204,5 +204,4 @@ function Certifications() {
     </div>
   );
 }
-
 export default Certifications;
