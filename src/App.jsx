@@ -15,12 +15,12 @@ function App() {
       style={{ backgroundImage: `url(${image2})` }}
     >
       {/* Optional dark overlay for better text visibility */}
-      <div className="bg-black bg-opacity-60 min-h-screen">
+      <div className="bg-[#2725252d] bg-opacity-60 min-h-screen">
         <div className="fixed top-0 left-0 w-full z-50">
           <Navbar />
         </div> 
 
-        <div className="pt-16"> {/* padding top to offset fixed Navbar */}
+        <div className=""> {/* padding top to offset fixed Navbar */}
           <Element name="home" className="element">
             <Home />
           </Element>
