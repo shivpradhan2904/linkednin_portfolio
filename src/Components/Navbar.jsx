@@ -73,7 +73,7 @@ function Navbar() {
       >
         <div className="flex flex-col space-y-3 justify-center items-center mt-3">
           <Link
-            to="portfolio"
+            to="home"
             smooth={true}
             duration={500}
             className="lighting-link text-[14px] hover:scale-110 hover:text-[#d7e1e0] transition-transform duration-300"
@@ -89,7 +89,7 @@ function Navbar() {
             Education
           </Link>
           <Link
-            to="Portfolio"
+            to="portfolio"
             smooth={true}
             duration={500}
             className="lighting-link text-[14px] hover:scale-110 hover:text-[#d7e1e0] transition-transform duration-300"

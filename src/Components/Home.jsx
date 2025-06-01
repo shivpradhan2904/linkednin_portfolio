@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import image2 from "../assets/images/image3.avif"; // Replace with actual image path
 import image from "../assets/images/img.jpg"; // Replace with actual image path
 import image1 from "../assets/images/splash1.png"; // Replace with actual image path
-import resume from "../assets/images/image.png"; // Replace with actual image path
+// import resume from "../assets/images/SIBA_PRADHAN mern.pdf"; // Replace with actual image path
 
 import {
   FaLinkedinIn,
@@ -67,17 +67,17 @@ function Home() {
   const [downloading, setDownloading] = useState(false);
 
   const handleDownload = () => {
-    setDownloading(true);
-    setTimeout(() => {
-      const link = document.createElement("a");
-      link.href = resume;
-      link.download = "Siba_Resume.png";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      setDownloading(false);
-    }, 2000); // fake loading effect
-  };
+  setDownloading(true);
+  setTimeout(() => {
+    const link = document.createElement("a");
+    link.href = "/Siba_Resume.pdf";
+    link.download = "Siba_Resume.pdf"; // ✅ correct extension
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setDownloading(false);
+  }, 2000);
+};
 
   const handleToggle = () => {
     setShowInfo((prev) => !prev);
@@ -218,13 +218,7 @@ function Home() {
               {/* About Me Paragraph */}
               <div className="text-center sm:mt-4 md:mt-1">
                 <p
-                  className="text-[#fff] md:text-lg text-[10px] px-4 max-w-2xl"
-                  // style={{
-                  //   color: "white",
-                  //   textShadow:
-                  //     "0 0 3px #ffffff, 0 0 10px #ffffffb3, 0 0 20px #ffffff",
-                  // }}
-                >
+                  className="text-[#fff] md:text-lg text-[10px] px-4 max-w-2xl">
                   <span
                     className="font-semibold text-xl md:text-3xl text-cyan-300"
                     style={{ fontFamily: "Bodoni Moda, cursive" }}

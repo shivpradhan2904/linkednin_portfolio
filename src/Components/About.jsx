@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import image2 from "../assets/images/image3.avif"; // Replace with your image
 import int from "../assets/images/post.png"; // Replace with your image
